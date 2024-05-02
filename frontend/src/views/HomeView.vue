@@ -1,42 +1,65 @@
 <template>
-  <div class="home">
-    <h1>Hello</h1>
-    <button @click="fetchData">Click</button>
-    <AddItem @item-added="fetchData" />
-    <div v-if="state.items">
-      <ItemCard v-for="item in state.items" :key="item.id" :item="item"/>
-    </div>
+  <div v-if="store.user" class="home">
+
+    <!-- <button @click="login">Login</button> -->
+    <h1 @click="router.push({name:'login'})">Beedle's Online Shop</h1>
+    <button @click="fetchData">Refresh</button>
+    <AddItem v-if="store.user.name == 'Beedle'" @item-added="fetchData" />
+    <ItemCardDisplay id="cards" @select="(i)=>state.selectedItem=i"/>
+
   </div>
+  <BeedleChris :item="state.selectedItem" @item-purchased="state.selectedItem = null"/>
 </template>
 
 <script setup>
+import {reactive} from 'vue';
 import AddItem from '@/components/AddItem.vue';
-import ItemCard from '@/components/ItemCard.vue';
+import ItemCardDisplay from '@/components/ItemCardDisplay.vue';
+import BeedleChris from '@/components/BeedleChris.vue';
+import router from '@/router';
+import {store } from '@/store';
 
-import { onMounted, reactive } from 'vue';
 const state = reactive({
-  items: null,
+  selectedItem: null
 });
-const uri = 'http://localhost:5016/items/';
 
-function fetchData(){
-  console.log('fetching data');
-  fetch(uri, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+function login(){
+  router.push('/login');
+}
+function passItem(item){
+  state.selectedItem = item;
+}
 
-  })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      state.items = data;
-    })
-    .catch(error => console.error('Error:', error));
+
+</script>
+
+<style scoped>
+h1 {
+  font-size: 50px;
+  font-family: "Hylia Serif", serif;
+  color: #2c3e50;
+  margin: 2rem;
+  padding-top:4rem;
+}
+#cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
 }
 
-onMounted(fetchData);
 
-</script>
+@media (max-width: 900px) {
+  .card {
+    flex: 0 0 50%;
+    /* 2 cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex: 0 0 100%;
+    /* 1 card per row on very small screens */
+  }
+}
+</style>

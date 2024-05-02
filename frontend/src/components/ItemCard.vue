@@ -5,24 +5,31 @@
     <div class="item-quantity">{{ item.quantity }} in stock</div>
 
   </div>
+  
 </template>
 <script setup>
 import router from '@/router';
-
+import {store }from '@/store';
+const emits = defineEmits(['select']);
 const props = defineProps(['item']);
 
 function openItem() {
+  if (store.user.name !== 'Beedle') {
+    emits('select', props.item);
+    return;
+  }
   console.log('Opening item:', props.item);
   router.push({ name: 'item', params: { id: props.item.id } });
 }
 </script>
 <style scoped>
 .item-card {
-  border: 1px solid #ccc;
+  border: 3px solid #864d03;
   padding: 10px;
-  margin: 10px;
+  margin: 8px;
   display: inline-block;
-  width: 200px;
+  background-color: #bdbb0c;
+  /* width: 200px; */
 }
 /* hover styles */
 .item-card:hover {

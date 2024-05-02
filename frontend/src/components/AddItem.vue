@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <!-- <div class="container"> -->
     <div class="form-item">
       <div class="label">Name</div>
       <div class="input"><input type="text" v-model="state.item.name" /></div>
@@ -15,16 +15,18 @@
       <div class="input"><input type="number" v-model="state.item.quantity" /></div>
   </div>
   <!-- make id form item -->
-  <div class="form-item">
+  <!-- <div class="form-item">
     <div class="label">Id</div>
     <div class="input"><input type="number" v-model="state.item.id" /></div>
-  </div>
+  </div> -->
 
-  <button @click="addItem">Add Item</button>
-  </div>
+  <button v-if="!props.item" @click="addItem">Add Item</button>
+  <button v-else @click="updateItem">Update Item</button>
+  <!-- </div> -->
 
 </template>
 <script setup>
+import router from '@/router';
 import { reactive } from 'vue';
 const props = defineProps(['item']);
 const emits = defineEmits(['itemAdded']);
@@ -34,7 +36,7 @@ const state = reactive({
     name: '',
     price: 0,
     quantity: 0,
-    id: 0,
+    // id: 0,
 
   }
 });
@@ -43,6 +45,9 @@ if (props.item) { // we re-use this component for creating and updating items
   state.item = props.item;
 }
 
+/**
+ * API call to add item to sql database
+ */
 function addItem() {
   fetch(uri, {
     method: 'POST',
@@ -56,6 +61,21 @@ function addItem() {
     .catch(error => console.error('Error:', error));
   emits('itemAdded');
 }
+
+function updateItem() {
+  fetch(uri + state.item.id, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(state.item)
+  })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+  router.push('/');
+}
+
 </script>
 
 <style scoped>

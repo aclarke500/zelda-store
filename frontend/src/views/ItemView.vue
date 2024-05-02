@@ -9,6 +9,7 @@
 import { reactive } from 'vue';
 import { useRoute } from 'vue-router';
 import AddItem from '@/components/AddItem.vue';
+import router from '@/router';
 
 
 const route = useRoute();
@@ -43,6 +44,7 @@ function deleteItem() {
     .then(response => response.json())
     .then(data => console.log(data))
     .catch(error => console.error('Error:', error));
+  router.push('/');
 }
 
 </script>

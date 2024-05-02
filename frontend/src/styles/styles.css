@@ -1,0 +1,10 @@
+button{
+  margin: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: green;
+  color: yellow;
+  border: 2px solid black;
+  border-radius: 5%;
+}
