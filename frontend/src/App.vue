@@ -20,7 +20,7 @@ header{
 body{
   margin: 0;
   /* box-sizing: border-box; */
-  box-sizing: content-box;
+  /* box-sizing: content-box; */
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

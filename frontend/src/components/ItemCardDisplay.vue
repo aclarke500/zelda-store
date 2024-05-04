@@ -45,16 +45,10 @@ onMounted(updateItems);
 
 <style scoped>
 .item-cards {
-    display: flex;
-    flex-direction: row; /* default, can be omitted */
-    flex-wrap: wrap; /* enables wrapping */
-    justify-content: centre;
-    width: 1000px; /* or set it to a larger value, like 1000px */
-    align-items: center;
-    border: 1px solid black;
+    /* display: flex;
+    flex-direction: column; */
+    margin: 0;
+
 }
 
-.card {
-flex:3;
-}
 </style>

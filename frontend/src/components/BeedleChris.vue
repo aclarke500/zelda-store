@@ -10,7 +10,7 @@
         <h5>{{ (props.item.price*state.quantity) }} rupees</h5>
         <button @click="buyItem">Buy</button>
       </div>
-      <div class="item-purchased">
+      <div  v-else class="item-purchased">
         <h2>Thaaaaaaaaaank you!!!</h2>
         <h3>Feel free to buy anything else!</h3>
       </div>
@@ -47,7 +47,11 @@ function buyItem() {
   })
     .then(response => response.json())
     .then(data => {
-      
+      debugger
+      if (!data.ok) {
+        throw data;
+
+      }
       alert('Purchase successful!');
       updateItems();
       updateUser();
@@ -55,8 +59,20 @@ function buyItem() {
       state.itemPurchased = true;
 
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error =>{
+      console.error('Error:', error);
+      alert(error.message);
+    });
 }
+
+// function handleError(error){
+//   switch (error.code) {
+//     case 'quantity_exceeded':
+//       alert('You cannot buy more than the available quantity');
+//       break;
+//     case 'insufficient_balance':
+
+//   }
 
 </script>
 <style scoped>
