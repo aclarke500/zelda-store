@@ -1,16 +1,16 @@
 <template>
   <div v-if="store.user" class="home">
 
-    <!-- <button @click="login">Login</button> -->
     <h1 @click="router.push({ name: 'login' })">Beedle's Online Shop</h1>
     <button @click="fetchData">Refresh</button>
     <AddItem v-if="store.user.name == 'Beedle'" @item-added="fetchData" />
-    <!-- <ItemCardDisplay id="cards" @select="(i)=>state.selectedItem=i"/> -->
+
     <div class="frame">
     <div class="left">
       <img id="rupee" src="@/assets/rupee.webp">
       <p>x {{ store.user.balance }}</p>
     </div>
+
     <div class="card-container" v-if="state.displayItems">
       <DisplayCategoryCards v-for="word in state.wordClasses" :key="word" :category="word"
         @select="(i) => { state.selectedItem = i }" />
@@ -39,8 +39,6 @@
 <script setup>
 import { reactive } from 'vue';
 import AddItem from '@/components/AddItem.vue';
-// import ItemCardDisplay from '@/components/ItemCardDisplay.vue';
-import BeedleChris from '@/components/BeedleChris.vue';
 import DisplayCategoryCards from '@/components/DisplayCategoryCards.vue';
 import router from '@/router';
 import { store, updateUser } from '@/store';
@@ -53,9 +51,9 @@ const state = reactive({
 
 });
 
-
-
-
+/**
+ * Fetches the items from the server
+ */
 function getWordClass() {
   displayItems = false;
   fetch(store.aiUrl, {
@@ -72,6 +70,9 @@ function getWordClass() {
     .catch(error => console.error('Error:', error));
 }
 
+/**
+ * Updates the purchase in db, and updates the user's balance on vue
+ */
 async function purchase(){
   fetch(store.uri + 'purchase', {
     method: 'POST',
@@ -92,7 +93,6 @@ async function purchase(){
 
       }
       alert('Purchase successful!');
-      // updateItems();
       state.displayItems = true;
       updateUser();
       emits('itemPurchased');
@@ -104,8 +104,6 @@ async function purchase(){
       alert(error.message);
     });
 }
-
-
 </script>
 
 <style scoped>
