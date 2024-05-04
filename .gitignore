@@ -1,1 +1,44 @@
 *.db
+# Compiled binary directory
+/bin/
+/obj/
+
+# Package directories
+/packages/
+/node_modules/
+
+/Migrations/obj/
+/Migrations/bin/
+
+# User-specific files
+.vscode/
+/.idea/
+/*.user
+/*.suo
+/*.csproj.user
+/*.sln.cache
+
+# Build and debug files
+*.sln.docstates
+*.pdb
+*.log
+
+# Configuration and environment files
+appsettings.*.json
+.env
+
+# Auto-generated files
+*.csproj.lock.json
+
+# Dependency management files
+*.lock
+project.lock.json
+
+# Generated files
+*.g.cs
+*.Designer.cs
+
+# Backups and temp files
+*.bak
+*.swp
+*.tmp

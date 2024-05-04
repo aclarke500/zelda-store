@@ -1,20 +1,6 @@
-MSBuild version 17.9.6+a4ecab324 for .NET
-  Determining projects to restore...
-  All projects are up-to-date for restore.
-/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Migrations/UserDbMigrations/20240502023323_InitialCreate.Designer.cs(11,23): error CS0246: The type or namespace name 'UserDb' could not be found (are you missing a using directive or an assembly reference?) [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]
-/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Migrations/20240501223921_InitialCreate.Designer.cs(11,23): error CS0246: The type or namespace name 'ItemDb' could not be found (are you missing a using directive or an assembly reference?) [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]
-/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Migrations/ItemDbModelSnapshot.cs(10,23): error CS0246: The type or namespace name 'ItemDb' could not be found (are you missing a using directive or an assembly reference?) [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]
-/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Migrations/UserDbMigrations/20240502142730_AddBalance.Designer.cs(11,23): error CS0246: The type or namespace name 'UserDb' could not be found (are you missing a using directive or an assembly reference?) [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]
-/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Migrations/UserDbMigrations/UserDbModelSnapshot.cs(10,23): error CS0246: The type or namespace name 'UserDb' could not be found (are you missing a using directive or an assembly reference?) [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]
-
-Build FAILED.
-
-/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Migrations/UserDbMigrations/20240502023323_InitialCreate.Designer.cs(11,23): error CS0246: The type or namespace name 'UserDb' could not be found (are you missing a using directive or an assembly reference?) [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]
-/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Migrations/20240501223921_InitialCreate.Designer.cs(11,23): error CS0246: The type or namespace name 'ItemDb' could not be found (are you missing a using directive or an assembly reference?) [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]
-/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Migrations/ItemDbModelSnapshot.cs(10,23): error CS0246: The type or namespace name 'ItemDb' could not be found (are you missing a using directive or an assembly reference?) [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]
-/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Migrations/UserDbMigrations/20240502142730_AddBalance.Designer.cs(11,23): error CS0246: The type or namespace name 'UserDb' could not be found (are you missing a using directive or an assembly reference?) [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]
-/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Migrations/UserDbMigrations/UserDbModelSnapshot.cs(10,23): error CS0246: The type or namespace name 'UserDb' could not be found (are you missing a using directive or an assembly reference?) [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]
-    0 Warning(s)
-    5 Error(s)
-
-Time Elapsed 00:00:00.66
+Building...
+/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Run.cs(19,17): warning CS7022: The entry point of the program is global code; ignoring 'NLPProgram.Main(string[])' entry point. [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]
+/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Run.cs(14,20): warning CS8618: Non-nullable property 'Features' must contain a non-null value when exiting constructor. Consider declaring the property as nullable. [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]
+/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Entities.cs(26,19): warning CS8618: Non-nullable property 'Class' must contain a non-null value when exiting constructor. Consider declaring the property as nullable. [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]
+/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Run.cs(9,19): warning CS8618: Non-nullable property 'Text' must contain a non-null value when exiting constructor. Consider declaring the property as nullable. [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]
+/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/Program.cs(227,30): warning CS8602: Dereference of a possibly null reference. [/Users/adamclarke/Desktop/Code/Db/TodoApi/todo-3/todo-3.csproj]

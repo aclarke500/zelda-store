@@ -4,6 +4,7 @@ public class Item{
   public string? Name { get; set; }
   public int Quantity { get; set; }
   public int Price { get; set; }
+  public string? Class { get; set; }
 }
 public class User
 {
@@ -19,4 +20,11 @@ public class PurchaseRequest
   public int ItemId { get; set;}
   public int Quantity { get; set; }
 }
+
+public class ClassificationResult
+{
+    public string? Class { get; set; }
+}
+
+
 }
