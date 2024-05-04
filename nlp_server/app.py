@@ -9,19 +9,6 @@ print('Model loaded successfully!')
 # Initialize the Flask application
 app = Flask(__name__)
 CORS(app)
-# # Define a simple route
-# @cross_origin(origins='*')  # This allows all origins
-# @app.route('/')
-# def home():
-#     return "Hello, welcome to my Flask app!"
-
-# # Define another route that accepts GET and POST requests
-# @app.route('/greet', methods=['GET', 'POST'])
-# def greet():
-#     if request.method == 'POST':
-#         # name = request.form.get('name', 'World')
-#         return jsonify(message=f"Hello,!")
-#     return jsonify("Hello, World!")
 
 @app.route('/classify', methods=['POST', 'OPTIONS'])
 @cross_origin(origins='*')  # This allows all origins
