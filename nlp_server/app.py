@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/classify', methods=['POST', 'OPTIONS'])
-@cross_origin(origins='*')  # This allows all origins
+@cross_origin(origins='*')  
 def classify():
     if request.method == 'POST':
         data = request.get_json()
